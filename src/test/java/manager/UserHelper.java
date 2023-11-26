@@ -2,6 +2,7 @@ package manager;
 
 import dto.UserDTO;
 import dto.UserDTOWith;
+import dto.UserLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -31,8 +32,17 @@ public class UserHelper extends BaseHelper{
         typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
         clickBase(btnYallaLoginForm);
     }
+    public void loginLombok(UserLombok user) {
+
+        clickBase(btnLoginNavigatorMenu);
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
+        clickBase(btnYallaLoginForm);
+    }
 
     public boolean validatePopUpMessageSuccessAfterLogin() {
         return isTextEqual(textSuccessLoginPopUp, "Logged in success");
     }
+
+
 }

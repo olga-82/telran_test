@@ -1,6 +1,9 @@
 package manager;
 
-import models.User;
+import dto.UserDTO;
+import dto.UserDTOWith;
+import dto.UserLombok;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,12 +20,30 @@ public class HelperUser extends HelperBase {
 
 
 
-    public void login(User user) {
+    public void login(UserDTO user) {
         clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, user.getEmail());
         typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnYallaLoginForm);
     }
+    public void loginWith(UserDTOWith user) {
+
+            clickBase(btnLoginNavigatorMenu);
+            typeTextBase(inputEmailLoginForm, user.getEmail());
+            typeTextBase(inputPasswordLoginForm, user.getPassword());
+            clickBase(btnYallaLoginForm);
+        }
+        public void loginLombok (UserLombok user){
+            clickBase(btnLoginNavigatorMenu);
+            typeTextBase(inputEmailLoginForm, user.getEmail());
+            typeTextBase(inputPasswordLoginForm, user.getPassword());
+            clickBase(btnYallaLoginForm);
+
+
+    }
+
+
+
 
     public boolean validatePopUpMessageSuccessAfterLogin() {
         return isTextEqual(textSuccessLoginPopUp, "Logged in success");
