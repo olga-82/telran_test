@@ -27,7 +27,7 @@ public class RegistrationTest {
     @Test
     public void registrationPositive() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(3000));
-        String email = "oleg1@sher.biz";
+        String email = "oleg1@sher23.biz";
         //randomUtils.generateEmail(7);
         System.out.println(email);
 
